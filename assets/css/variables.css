@@ -1,0 +1,51 @@
+/*
+Theme Name: Vinotipia
+Theme URI: http://localhost/miweb
+Author: Teo Chiappero
+Description: Un tema creado desde cero
+Version: 1.0
+*/
+
+/* GLOBAL VARIABLES */
+:root {
+  --primary-color: #591e2b;
+  --primary-color-light: #7b252e;
+  --secondary-color: #deb867;
+  --secondary-color-light: #e1c088;
+  --terciary-color: null; /* DEFINIR LUEGO PARA HOVER DE BOTONES ETC */
+  --text-white: #fff4dd;
+  --text-black: #000000;
+  --background-color: #f9f1ea;
+  --g-light: #fff4dd; /* NO SE PARA QUE SIRVE */
+  --primary-color-rgba: rgba(89, 30, 43, 0.7);
+}
+
+/* GLOBAL STYLES */
+body {
+  font-family: "Sofia Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color);
+}
+
+p,
+h3 {
+  word-wrap: break-word;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+
+
+
+

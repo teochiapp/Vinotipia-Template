@@ -1,0 +1,420 @@
+/* ARCHIVE PRODUCT PAGE STYLES */
+
+/* ===================================================
+   SHOP HERO (fuera del container — ancho completo)
+=================================================== */
+.shop-hero-section {
+    width: 100%;
+    background-color: var(--primary-color);
+    padding: 4rem 2rem 3rem;
+    text-align: center;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.shop-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.shop-eyebrow {
+    font-family: 'Sofia Sans', sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+.shop-hero-content h1 {
+    font-family: 'Sofia Sans', sans-serif;
+    font-size: clamp(2rem, 6vw, 3rem);
+    font-weight: 200;
+    color: #ffffff;
+    margin: 0 0 10px;
+    line-height: 1;
+}
+
+.shop-description {
+    font-family: 'Sofia Sans', sans-serif;
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.shop-question {
+    font-family: 'Sofia Sans', sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.shop-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.shop-chips .chip-btn {
+    background: transparent;
+    border: 1px solid rgba(255,244,221,0.35);
+    color: var(--secondary-color);
+    padding: 10px 22px;
+    border-radius: 50px;
+    font-family: 'Sofia Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+.shop-chips .chip-btn:hover,
+.shop-chips .chip-btn.active {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* ===================================================
+   LOADER
+=================================================== */
+.shop-loader {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: rgba(247,241,229,0.7);
+    backdrop-filter: blur(3px);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 14px;
+    font-family: 'Sofia Sans', sans-serif;
+    font-size: 1rem;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+}
+
+.shop-loader.visible {
+    display: flex;
+}
+
+.shop-loader__spinner {
+    width: 44px;
+    height: 44px;
+    border: 3px solid rgba(89,30,43,0.15);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 0.75s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ===================================================
+   ESTRUCTURA GENERAL
+=================================================== */
+.archive-container {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.container-catalogo {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+  margin-top: 30px;
+  color: var(--text-black);
+}
+
+@media screen and (min-width: 769px) {
+  /* Si hay exactamente 1 producto visible: centrado */
+  .container-catalogo.items-1 {
+    grid-template-columns: minmax(300px, 400px);
+    justify-content: center;
+  }
+
+  /* Si hay exactamente 2 productos visibles: space-around */
+  .container-catalogo.items-2 {
+    grid-template-columns: repeat(2, minmax(300px, 400px));
+    justify-content: space-around;
+  }
+}
+
+.titulo-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 1.6rem;
+}
+
+.titulo-link:hover {
+  color: var(--secondary-color);
+}
+
+/* ===================================================
+   TARJETA DE PRODUCTO
+=================================================== */
+.bloque-producto {
+  background: white;
+  padding: 5px 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.bloque-producto:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  z-index: 2;
+}
+
+/* === Imagen === */
+.imagen-producto .archive-product-image {
+  width: 100%;
+  max-width: 240px;
+  border-radius: 15px;
+  object-fit: cover;
+  height: 280px;
+}
+
+/* Imagen horizontal especial para Gift Card */
+.bloque-producto.product-is-gift-card .imagen-producto .archive-product-image {
+  height: auto;
+  max-width: 280px;
+  aspect-ratio: 16 / 9;
+}
+
+.imagen-producto {
+  height: 280px;
+}
+
+.bloque-producto.product-is-gift-card .imagen-producto {
+  height: auto;
+}
+
+/* === Info === */
+.info-producto {
+  padding: 10px;
+  width: 100%;
+}
+
+.info-producto h2 {
+  margin-bottom: 0;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.archive-product-precio {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  margin: 0;
+}
+
+.archive-container .woocommerce-Price-amount,
+.archive-container .woocommerce-Price-amount.amount,
+.archive-container span.woocommerce-Price-amount.amount {
+  color: var(--secondary-color) !important;
+  font-weight: 700 !important;
+}
+
+.archive-product-descripcion,
+.archive-product-descripcion p,
+.archive-product-descripcion span {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: #444;
+  margin: 10px;
+  font-style: italic;
+  font-family: inherit;
+}
+
+.archive-product-cantidad-vinos {
+  display: inline-block;
+  background-color: var(--primary-color-light);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 0 auto 10px auto;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 4px rgba(123, 37, 46, 0.15);
+}
+
+.archive-product-cantidad-vinos span {
+  font-weight: 700;
+  color: var(--secondary-color);
+  margin-right: 4px;
+}
+
+/* ===================================================
+   BOTONES
+=================================================== */
+.archive-ver-detalle-btn,
+.archive-agregar-carrito-btn {
+  display: flex;
+  font-family: "Sofia Sans", sans-serif;
+  padding: 12px 11px;
+  border-radius: 100px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  align-items: center;
+  justify-content: center;
+}
+
+.archive-ver-detalle-btn {
+  background-color: var(--primary-color);
+  color: var(--text-white);
+  width: 130px;
+  height: 20px;
+}
+
+.archive-ver-detalle-btn:hover {
+  background-color: #7c252e;
+  color: white;
+}
+
+.archive-agregar-carrito-btn {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  width: 44px;
+  height: 44px;
+  padding: 0;
+}
+
+.archive-agregar-carrito-btn:hover {
+  background-color: var(--primary-color-light);
+  color: white;
+}
+
+.archive-agregar-carrito-btn .fa-cart-plus,
+.archive-agregar-carrito-btn i {
+  font-size: 18px;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 20px 0 10px;
+}
+
+span.woocommerce-Price-amount.amount {
+  color: var(--secondary-color) !important;
+  font-size: 1.6rem !important;
+  text-decoration: none !important;
+}
+
+/* ===================================================
+   BADGE DE JUGADORES
+=================================================== */
+.badge-jugadores {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: var(--primary-color-light);
+  color: var(--text-white);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 100px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  z-index: 5;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* ===================================================
+   TRIADA IMAGE
+=================================================== */
+.imagen-triada-archive {
+  position: absolute;
+  object-fit: contain;
+  width: 95px;
+  transform: rotate(-20deg);
+  top: 45px;
+  left: 5px;
+}
+
+/* ===================================================
+   SECCIÓN DESTACADA
+=================================================== */
+.bloque-producto--destacado {
+  border: 2px solid var(--secondary-color);
+  position: relative;
+}
+
+.bloque-producto--destacado::before {
+  content: 'NUEVO';
+  position: absolute;
+  top: -12px;
+  left: 20px;
+  background-color: var(--secondary-color);
+  color: white;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 3px 12px;
+  border-radius: 100px;
+}
+
+/* Ocultar puntuaciones/estrellas */
+.archive-container .star-rating,
+.archive-container .woocommerce-product-rating {
+  display: none !important;
+}
+
+/* ===================================================
+   REVIEWS
+=================================================== */
+.reviews-tienda {
+  margin-top: 60px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* ===================================================
+   RESPONSIVE
+=================================================== */
+@media screen and (max-width: 768px) {
+  .shop-hero-content h1 { font-size: 2rem; }
+  .shop-chips { gap: 8px; }
+  .shop-chips .chip-btn { font-size: 14px; padding: 9px 16px; }
+
+  .container-catalogo {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .imagen-producto .archive-product-image {
+    height: 220px;
+  }
+}

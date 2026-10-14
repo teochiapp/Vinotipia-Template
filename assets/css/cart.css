@@ -1,0 +1,258 @@
+/* CART PAGE STYLES */
+
+/* === Contenedor general === */
+.container-pagina {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 20px;
+  color: var(--text-black);
+  font-family: "Sofia Sans", sans-serif;
+}
+
+.contenido-pagina {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  font-size: 0.95rem; /* Reducido de 1.1rem */
+  line-height: 1.6; /* Reducido de 1.8 */
+}
+
+.contenido-pagina h1,
+.contenido-pagina h2,
+.contenido-pagina h3 {
+  color: var(--primary-color);
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.contenido-pagina p {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* === Estilo del título "Total del carrito" === */
+.cart_totals h2 {
+  font-size: 1.5rem; /* Reducido de 1.8rem */
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* === Enlaces de productos === */
+a.wc-block-components-product-name {
+  color: var(--primary-color) !important;
+  text-decoration: none !important;
+}
+
+.wc-block-components-button:not(.is-link) .wc-block-components-button__text{
+    color: var(--primary-color) !important;
+    font-size: 16px; /* Reducido de 20px */
+    text-align: left;
+}
+
+.wc-block-components-button .wp-element-button .wc-block-cart__submit-button contained {
+  text-decoration: none !important;    
+}
+
+/* === Botón volver === */
+.volver-catalogo {
+  margin-bottom: 30px;
+}
+
+.btn-volver {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: var(--text-white);
+  padding: 10px 20px;
+  border-radius: 100px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  font-family: "Sofia Sans", sans-serif;
+}
+
+.btn-volver:hover {
+  background-color: var(--secondary-color);
+}
+
+/* === Grid de productos === */
+.wc-block-grid__products{
+  justify-content: center;
+}
+
+.wc-block-grid__product-add-to-cart.wp-block-button .wp-block-button__link {
+  background: var(--primary-color);
+}
+
+.wc-block-grid__product-title {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+/* === Precios en carrito === */
+.woocommerce-cart .woocommerce-Price-amount.amount,
+.woocommerce-cart .woocommerce-Price-amount .amount,
+.woocommerce-cart span.woocommerce-Price-amount.amount,
+.wc-block-components-product-price,
+.wc-block-components-product-price__value,
+.wc-block-cart-items__row .wc-block-components-product-price__value,
+.cart-subtotal .woocommerce-Price-amount,
+.order-total .woocommerce-Price-amount,
+.product-subtotal .woocommerce-Price-amount,
+.cart_totals .woocommerce-Price-amount {
+    color: var(--primary-color) !important;
+    font-weight: 700 !important;
+    font-size: 1.1rem !important;
+}
+
+/* Precio total más grande */
+.order-total .woocommerce-Price-amount.amount,
+.cart_totals .order-total .woocommerce-Price-amount {
+    font-size: 1.4rem !important;
+    font-weight: 800 !important;
+    color: var(--primary-color) !important;
+}
+
+/* Descuentos y cupones */
+.cart-discount .woocommerce-Price-amount,
+.woocommerce-remove-coupon,
+td[data-title*="Cupón"],
+.cart_totals tr.order-discount td,
+.woocommerce-checkout-review-order-table tr.order-discount td {
+    color: var(--text-black) !important;
+    font-weight: 600 !important;
+}
+
+/* Etiquetas de las filas de totales */
+.cart_totals table th,
+.cart_totals table td {
+    color: var(--text-black) !important;
+    font-weight: 600 !important;
+}
+
+/* Montos de descuentos específicos */
+.cart_totals tr.order-discount td,
+.cart_totals tr[class*="discount"] td,
+.woocommerce-checkout-review-order-table tr.order-discount td,
+.woocommerce-checkout-review-order-table tr[class*="discount"] td {
+    color: var(--primary-color) !important;
+    font-weight: 700 !important;
+    font-size: 1.1rem !important;
+}
+
+/* Texto de descuento (descripción) */
+.cart_totals tr.order-discount th,
+.cart_totals tr[class*="discount"] th,
+.woocommerce-checkout-review-order-table tr.order-discount th,
+.woocommerce-checkout-review-order-table tr[class*="discount"] th {
+    color: var(--text-black) !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+}
+
+/* === Tablas del carrito === */
+.woocommerce table.shop_table {
+    font-size: 0.9rem; /* Fuente más pequeña para las tablas */
+}
+
+.woocommerce table.shop_table th,
+.woocommerce table.shop_table td {
+    padding: 12px 8px; /* Padding más compacto */
+    font-size: 0.9rem;
+}
+
+.woocommerce table.shop_table th {
+    font-size: 0.95rem; /* Títulos ligeramente más grandes */
+    font-weight: 600;
+}
+
+/* === Botones de checkout === */
+a.checkout-button.button.alt.wc-forward {
+  background: var(--primary-color);
+  font-family: 'Sofia Sans';
+}
+
+/* === Enlaces de productos en carrito === */
+tr.woocommerce-cart-form__cart-item.cart_item > td.product-name a {
+  color: var(--primary-color) !important;
+}
+
+/* === Enlaces de envío === */
+tr.woocommerce-shipping-totals.shipping > td > form > a {
+  color: var(--primary-color) !important;
+}
+
+body > main > div.contenido-pagina > div > form > table > tbody > tr:nth-child(2) > td > div > button {
+  font-family: 'Sofia Sans';
+  min-width: 150px !important;
+}
+
+body > main > div.contenido-pagina > div > div.cart-collaterals > div > table > tbody > tr.shipping > td > form > a {
+  color: var(--primary-color) !important;
+  font-family: 'Sofia Sans';
+}
+
+/* === Input y Botón de Cupón más grandes === */
+.woocommerce-cart table.cart td.actions .coupon .input-text,
+.woocommerce-cart .coupon .input-text,
+#coupon_code {
+    min-width: 250px !important;
+    padding: 12px 15px !important;
+    font-size: 1.1rem !important;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-right: 10px;
+}
+
+.woocommerce-cart table.cart td.actions .coupon .button,
+.woocommerce-cart .coupon .button {
+    padding: 12px 20px !important;
+    font-size: 1.1rem !important;
+    border-radius: 6px;
+}
+
+@media screen and (max-width: 768px) {
+    .woocommerce-cart table.cart td.actions .coupon .input-text,
+    .woocommerce-cart .coupon .input-text,
+    #coupon_code {
+        width: 100% !important;
+        margin-bottom: 10px;
+    }
+    .woocommerce-cart table.cart td.actions .coupon .button,
+    .woocommerce-cart .coupon .button {
+        width: 100% !important;
+    }
+}
+
+/* === Meta Data del Producto (Gift Card info) === */
+dl.variation {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0.85rem;
+    margin-top: 8px;
+}
+dl.variation dt {
+    font-weight: 600;
+    color: var(--primary-color);
+    float: left;
+    clear: left;
+    margin-right: 5px;
+}
+dl.variation dd {
+    margin: 0;
+}
+dl.variation dd p {
+    margin: 0 !important;
+    display: inline-block;
+    color: #444;
+}
+dl.variation::after {
+    content: "";
+    display: table;
+    clear: both;
+}

@@ -1,0 +1,150 @@
+/* MY ACCOUNT PAGE STYLES */
+
+/* === Estados de la página === */
+.cuenta-logueado .woocommerce {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+}
+
+.cuenta-login .woocommerce {
+  display: block;
+  padding: 20px;
+}
+
+body > .cuenta-login > div > h2 {
+  padding: 10px 0 !important;
+  margin: 0 auto !important;
+  max-width: 600px;
+  color: var(--primary-color);
+  font-size: 1.6rem;
+}
+
+/* === Formularios de login/registro === */
+.woocommerce form.login,
+.woocommerce form.register {
+  max-width: 600px;
+  margin: 10px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* === Navegación del menú lateral (Mi cuenta) === */
+.woocommerce-MyAccount-navigation {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  margin-bottom: 40px;
+}
+
+.woocommerce-MyAccount-navigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.woocommerce-MyAccount-navigation li {
+  margin-bottom: 10px;
+}
+
+.woocommerce-MyAccount-navigation a {
+  display: block;
+  padding: 12px 16px;
+  border-radius: 100px;
+  color: var(--primary-color);
+  background-color: var(--text-white);
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.woocommerce-MyAccount-navigation a:hover,
+.woocommerce-MyAccount-navigation .is-active a {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+/* === Contenido del panel derecho === */
+.woocommerce-MyAccount-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* === Formularios === */
+.woocommerce form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.woocommerce form input,
+.woocommerce form textarea,
+.woocommerce form select {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+.woocommerce form label {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.woocommerce button.button {
+  background-color: var(--primary-color);
+  color: var(--text-white);
+  border: none;
+  border-radius: 100px;
+  padding: 12px 24px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.woocommerce button.button:hover {
+  background-color: var(--primary-color-light);
+  color: var(--text-white);
+}
+
+/* === Mensajes de WooCommerce === */
+.woocommerce-message,
+.woocommerce-error,
+.woocommerce-info {
+  border: 1px solid var(--primary-color-light);
+  background-color: var(--text-white);
+  color: var(--primary-color);
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* === RESPONSIVE === */
+@media screen and (max-width: 768px) {
+  .cuenta-logueado .woocommerce {
+    flex-direction: column;
+  }
+
+  main.container.cuenta-logueado {
+    padding: 0 !important;
+    margin-right: 40px !important;
+  }
+
+  .woocommerce-MyAccount-navigation {
+    margin-bottom: 20px;
+  }
+
+  .woocommerce form {
+    gap: 10px;
+  }
+}
+
+
+
+
+

@@ -1,0 +1,810 @@
+/* SECTIONS - ABOUT, HOW IT WORKS, PRODUCT PARTS, ETC. */
+
+/* ABOUT SECTION */
+.about-container {
+  position: relative;
+  padding: 6rem 2rem;
+  color: var(--text-black, #1e1e1e);
+  overflow: hidden;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.about-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.about-separator {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  object-fit: contain;
+  padding: 30px 0;
+}
+
+.image-about-left,
+.image-about-right {
+  position: absolute;
+  max-width: 100%;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.image-about-left {
+  border-radius: 150px;
+  top: 57px;
+  left: 25px;
+  width: 170px;
+}
+
+.image-about-right {
+  right: 0;
+  bottom: 80px;
+  width: 180px;
+  transform: translate(45px, 55px);
+}
+
+@media (min-width: 1554px) {
+  .image-about-right {
+    bottom: 30vh;
+    width: 320px;
+
+  }
+}
+
+.about-title {
+  text-transform: uppercase;
+  font-size: 32px;
+  color: var(--primary-color, #6a1b1b);
+  letter-spacing: 2px;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.about-subtitle {
+  font-size: 1.4rem;
+  color: var(--primary-color-light, #6a1b1b);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+
+}
+
+.about-description {
+  font-size: 1.4rem;
+  color: var(--primary-color-light, #6a1b1b);
+  line-height: 1.3;
+}
+
+.content-about {
+  position: relative;
+  z-index: 2;
+  max-width: 950px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.footer-about-mobile {
+  display: none;
+}
+
+.footer-about-desktop {
+  color: rgba(44, 11, 18, 1);
+  font-weight: 500;
+}
+
+@media (max-width: 767px) {
+  .footer-about-desktop {
+    display: none;
+  }
+
+  .footer-about-mobile {
+    display: inline;
+  }
+
+  .image-about-left {
+    top: 25px;
+    left: 5px;
+    width: 130px;
+  }
+
+  .about-subtitle,
+  .about-description {
+    font-size: 1.1rem !important;
+  }
+
+  .about-separator {
+    padding: 15px 0 !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .image-about-left {
+    width: 90px;
+  }
+
+  .image-about-right {
+    width: 140px;
+    transform: translate(10px, 30px);
+  }
+
+  .about-container {
+    padding: 4rem 1.5rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .image-about-right {
+    width: 120px;
+    transform: translate(10px, 55px);
+  }
+}
+
+/* HOW IT WORKS SECTION */
+.how-it-works-section {
+  background-color: var(--primary-color);
+  padding: 3rem 3.5rem;
+  border-radius: 2rem;
+  color: var(--text-white);
+  margin: 2rem 4rem;
+}
+
+/* Fila superior: título a la izquierda, pills a la derecha */
+.how-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 5px 20px;
+}
+
+.how-title {
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  letter-spacing: 5px;
+  margin: 0;
+  color: var(--text-white);
+  font-weight: 400;
+}
+
+/* Pills de info */
+.how-pills {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  background: var(--primary-color-light);
+  border-radius: 999px;
+  padding: 5px 10px;
+}
+
+.how-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: transparent;
+  color: var(--text-white);
+  padding: 8px 16px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.how-pill i {
+  font-size: 0.75rem;
+}
+
+/* Cards wrapper */
+.how-cards-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1.2rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+/* Cada card */
+.how-card {
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  border-radius: 1.5rem;
+  padding: 1.5rem 1.2rem 1.2rem;
+  flex: 1 1 0;
+  min-width: 120px;
+  max-width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+}
+
+.how-number {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  font-weight: bold;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.how-card img {
+  width: 100%;
+  height: auto;
+  margin: 1.5rem auto 1rem;
+  object-fit: contain;
+}
+
+.how-text {
+  font-size: 1rem;
+  line-height: 1.4;
+  text-align: left;
+  color: var(--primary-color);
+}
+
+.how-footer {
+  font-size: 0.95rem;
+  color: var(--text-white);
+  margin-top: 1rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+@media (max-width: 1065px) {
+  .how-it-works-section {
+    padding: 2.5rem 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .how-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .how-pills {
+    background: transparent;
+    border-radius: 0;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .how-pill {
+    background: var(--primary-color-light);
+    border-radius: 999px;
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+
+  .how-cards-wrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .how-card {
+    flex: 0 0 auto;
+    width: 45%;
+    max-width: 280px;
+    min-width: unset;
+  }
+
+  .how-footer {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .how-card {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .how-title {
+    font-size: 1.4rem;
+    letter-spacing: 3px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .how-it-works-section {
+    margin: 2rem 0;
+  }
+}
+
+
+
+/* PRODUCT PARTS SECTION */
+.vinotipia-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8rem;
+  padding: 6rem 3rem;
+  max-width: 1500px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.vinotipia-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 0 100px 0 100px;
+  /* Esquinas curvas similares a la imagen */
+  object-fit: cover;
+}
+
+.vinotipia-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.vinotipia-text h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+  margin-top: 0;
+}
+
+.vinotipia-text h2 .italic {
+  font-style: italic;
+  font-weight: bold;
+}
+
+.vinotipia-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem 1rem;
+  padding: 0;
+  align-items: start;
+}
+
+.vinotipia-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  width: 20rem;
+}
+
+.vinotipia-list .num {
+  font-weight: bold;
+  color: #dda759;
+  font-size: 1.1rem;
+  min-width: 30px;
+}
+
+.vinotipia-list strong {
+  color: var(--text-black);
+  display: block;
+  margin-bottom: 0.2rem;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 1.15rem;
+}
+
+.vinotipia-list p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  font-weight: 300;
+  margin-bottom: 0;
+}
+
+
+
+@media (max-width: 1200px) {
+  .vinotipia-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .vinotipia-text h2 {
+    text-align: left;
+    font-size: 25px;
+  }
+
+  .vinotipia-container h2 br {
+    display: none;
+  }
+
+  .vinotipia-container p br {
+    display: none;
+  }
+}
+
+@media (max-width: 1400px) {
+  .experience {
+    flex-direction: column;
+  }
+
+  .experience-grid {
+    justify-items: center;
+  }
+
+  .vinotipia-container {
+    gap: 5rem;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .vinotipia-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .vinotipia-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .vinotipia-image img {
+    border-radius: 50px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+  .vinotipia-container {
+    flex-direction: row;
+    gap: 3rem;
+  }
+
+  .vinotipia-image>img {
+    max-width: 280px;
+  }
+}
+
+/* KIT INCLUDES SECTION */
+.kit-includes {
+  background-color: #f8f1eb;
+  padding: 6rem 3rem;
+  color: var(--text-black);
+}
+
+.kit-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  max-width: 1400px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.kit-header {
+  flex: 1 1 300px;
+  max-width: 360px;
+}
+
+.kit-header h2 {
+  font-size: 28px;
+  font-weight: 300;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+
+
+.kit-header .subtitle {
+  font-size: 22px;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 3px;
+  white-space: nowrap;
+}
+
+.kit-items {
+  flex: 2 1 700px;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: nowrap;
+  max-width: 100%;
+}
+
+.kit-item {
+  width: 100%;
+  max-width: 280px;
+  text-align: center;
+}
+
+.kit-item img {
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 1024px) {
+  .kit-item img {
+    height: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .kit-item img {
+    height: 270px;
+  }
+}
+
+.kit-item p {
+  font-family: 'Sofia Sans', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.3;
+  letter-spacing: 0;
+  text-align: left;
+  color: rgba(89, 30, 43, 1);
+  padding-left: 1em;
+  position: relative;
+}
+
+.kit-item p::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+}
+
+.vino-tipo-label {
+  display: block;
+  font-size: 0.8em;
+  opacity: 0.9;
+  font-weight: normal;
+  margin-top: 4px;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .vino-tipo-label {
+    font-size: 0.6em;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+  .kit-content {
+    flex-direction: column;
+  }
+
+  .kit-includes {
+    padding: 4rem 3rem;
+  }
+
+  .kit-header {
+    flex: 0;
+    margin-bottom: 2rem;
+  }
+
+  .kit-items {
+    flex: 0;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .kit-includes {
+    padding: 3rem 1.5rem;
+  }
+
+  .kit-header {
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .kit-header .subtitle {
+    font-size: 18px;
+    letter-spacing: 1.3px;
+    white-space: nowrap;
+  }
+
+  .kit-header h2 {
+    font-size: 20px;
+  }
+
+  .kit-items {
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .kit-item {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .kit-item p {
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 1.3;
+    text-align: center;
+    padding-left: 0;
+  }
+
+  .kit-item p::before {
+    position: static;
+    margin-right: 8px;
+  }
+}
+
+/* EXPERIENCE SECTION */
+.experience {
+  margin: auto;
+  padding: 8rem 2rem;
+  display: flex;
+  gap: 8rem;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+.contentheigth {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 40px;
+}
+
+.intro h2 {
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: var(--text-black);
+  font-weight: 300;
+}
+
+.intro p {
+  font-size: 24px;
+  color: var(--primary-color);
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.four-card {
+  background-color: transparent;
+  border: 1px solid #a85a55;
+  border-radius: 12px;
+  padding: 10px 20px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  height: 201px;
+  width: 460px;
+}
+
+.four-card img {
+  width: 80px;
+  height: 90px;
+  flex-shrink: 0;
+}
+
+.four-card h3 {
+  color: var(--primary-color-light);
+  margin: 0 0 10px;
+  font-size: 24;
+  font-weight: 500;
+}
+
+.four-card p {
+  font-size: 16px;
+  margin: 0;
+  color: var(--primary-color-light);
+  font-weight: 300;
+}
+
+.four-card em {
+  display: block;
+  margin-top: 5px;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.four-card small {
+  display: block;
+  margin-top: 5px;
+  color: var(--primary-color-light);
+  font-size: 13px;
+}
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 1024px) {
+  .experience {
+    display: block;
+    padding: 4rem 2rem;
+  }
+
+  .intro {
+    margin-left: 0;
+  }
+
+  .intro h2 {
+    font-size: 24px;
+  }
+
+  .intro br {
+    display: none;
+  }
+
+  .intro p {
+    font-size: 16px;
+  }
+
+  .four-card {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    max-width: 600px;
+    width: 100%;
+  }
+
+  .four-card img {
+    margin-bottom: 10px;
+  }
+
+  .four-card .text h3 {
+    font-size: 15px;
+  }
+
+  .four-card .text p {
+    font-size: 13px;
+  }
+
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1440px) {
+  .experience {
+    gap: 2rem;
+    display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-grid {
+    padding: 0 1rem;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+  .experience>.intro {
+    margin-left: 0;
+    padding: 0 2rem;
+  }
+
+  .four-card {
+    width: 425px;
+    height: 230px;
+  }
+
+  .experience>.intro br {
+    display: none;
+  }
+}

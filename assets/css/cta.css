@@ -1,0 +1,202 @@
+/* CTA SECTION */
+
+.tasting-section {
+  background-color: var(--primary-color);
+  padding: 0.8rem 1rem;
+  color: var(--text-white);
+}
+
+.tasting-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  align-items: center;
+}
+
+.tasting-text {
+  flex: 1;
+  min-width: 300px;
+  color: var(--text-white);
+  font-size: 1.75rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.tasting-text em {
+  font-style: italic;
+  font-weight: bold;
+  color: var(--text-white);
+}
+
+.tasting-text>p:not(.cta-description) {
+  font-family: 'Sofia Sans', sans-serif;
+  font-weight: 300;
+  font-size: 36px;
+  line-height: 1.5;
+  letter-spacing: 0;
+  margin-bottom: 1rem;
+}
+
+.cta-description {
+  font-family: 'Sofia Sans', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 17px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  margin: 1rem 0;
+}
+
+.tasting-buttons {
+  margin-top: 2rem;
+}
+
+.tasting-graphic {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.circle {
+  width: 300px;
+  height: 300px;
+  border: 3px solid var(--primary-color-light);
+  border-radius: 50%;
+  position: relative;
+}
+
+.circle>.icon {
+  width: 60px;
+  height: 60px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--primary-color-light);
+  border-radius: 50%;
+  position: absolute;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 60%;
+  object-fit: contain;
+  background-color: var(--primary-color);
+}
+
+/* Position icons around the circle */
+.icon-eye {
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.icon-hand {
+  top: 50%;
+  left: -50px;
+  transform: translateY(-50%);
+}
+
+.icon-nose {
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.icon-mouth {
+  top: 50%;
+  right: -50px;
+  transform: translateY(-50%);
+}
+
+.icon-wine {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 768px) {
+  .tasting-content {
+    flex-direction: column-reverse;
+    gap: 4rem;
+  }
+
+  .kit-includes {
+    padding-top: 0;
+  }
+
+  .tasting-text {
+    line-height: 1.6;
+    text-align: center;
+    min-width: unset;
+  }
+
+  .tasting-text>p:not(.cta-description) {
+    font-size: 32px;
+  }
+
+  .tasting-buttons {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .tasting-section {
+    padding: 2rem 0.5rem;
+  }
+
+  .tasting-text>p:not(.cta-description) {
+    font-size: 26px;
+  }
+
+  .cta-description {
+    font-size: 15px;
+  }
+
+  .tasting-graphic {
+    min-width: unset;
+  }
+
+  .circle {
+    width: 200px;
+    height: 200px;
+  }
+
+  .circle>.icon {
+    width: 46px;
+    height: 46px;
+    padding: 12px;
+  }
+
+  .icon-eye {
+    top: -30px;
+  }
+
+  .icon-hand {
+    left: -30px;
+  }
+
+  .icon-nose {
+    bottom: -30px;
+  }
+
+  .icon-mouth {
+    right: -30px;
+  }
+
+  a.button.cta-button {
+    margin: 10px 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 803px) {
+  .cta-button {
+    padding: 15px 25px;
+  }
+}

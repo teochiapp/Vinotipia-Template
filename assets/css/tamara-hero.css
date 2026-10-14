@@ -1,0 +1,214 @@
+/* TAMARA HERO SECTION */
+
+.tamara-hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--secondary-color-light);
+  padding: 2rem 4rem;
+  margin: 4rem 12rem;
+  border-radius: 2rem;
+  gap: 2rem;
+  position: relative;
+  flex-wrap: wrap;
+  overflow: visible;
+  flex-direction: row;
+}
+
+.tamara-hero-content {
+  flex: 1;
+  max-width: 600px;
+  color: var(--primary-color);
+  font-weight: 300;
+  z-index: 2;
+}
+
+.tamara-hero-content h2 {
+  font-size: clamp(1.8rem, 2vw + 1rem, 2.8rem);
+  margin-bottom: 1.2rem;
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+.tamara-hero-content h2 em {
+  font-style: italic;
+  font-weight: bold;
+}
+
+.tamara-hero-content p {
+  font-size: clamp(1rem, 1vw + 0.5rem, 1.3rem);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.tamara-hero-content strong {
+  font-weight: bold;
+}
+
+.tamara-hero-image {
+  position: absolute;
+  bottom: -8px;
+  right: 0;
+  width: clamp(250px, 40vw, 850px);
+  z-index: 1;
+  aspect-ratio: auto;
+}
+
+.tamara-hero-image .tamara-imagen,
+.tamara-hero-image .tamara-bg {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.tamara-hero-image .tamara-imagen {
+  position: relative;
+  z-index: 2;
+}
+
+.tamara-hero-image .tamara-bg {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.line-break {
+  display: inline;
+}
+
+@media (max-width: 767px) {
+  .line-break {
+    display: none;
+  }
+
+  .tamara-hero-section {
+    padding: 3rem 3rem;
+    margin: 3rem 0;
+    border-radius: 0;
+    flex-direction: column;
+    text-align: left;
+    overflow: hidden;
+    padding-bottom: 0;
+    margin-bottom: 0 !important;
+  }
+
+  .tamara-hero-content {
+    max-width: 100%;
+  }
+
+  .tamara-hero-content h2 br {
+    display: block;
+  }
+
+  .tamara-hero-image {
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    margin: 2rem auto 0;
+    transform: scale(1.2);
+  }
+
+  .tamara-hero-image .tamara-bg {
+    top: unset;
+    bottom: -20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .tamara-hero-image {
+    width: 100%;
+    position: static;
+    margin: 2rem auto 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .tamara-hero-content {
+    max-width: none;
+    padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 8vw, 10rem);
+  }
+  
+  h2 br {
+    display: none;
+  }
+
+  .tamara-hero-image .tamara-bg {
+    top: unset;
+    bottom: -20px;
+    width: 60%;
+    left: 17.5vw;
+  }
+
+  img.tamara-imagen {
+    width: 60% !important;
+  }
+
+  .tamara-hero-section {
+    padding: 0;
+    margin: 3rem;
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1449px) {
+  .tamara-hero-section {
+    flex-direction: column;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin: 3rem 6rem;
+  }
+
+  .tamara-hero-content {
+    max-width: none;
+  }
+  
+  h2 br {
+    display: none;
+  }
+
+  .tamara-hero-image {
+    position: relative;
+    margin-top: 2rem;
+    width: 650px;
+    bottom: -16px;
+  }
+}
+
+@media (min-width: 1450px) and (max-width: 1549px) {
+  .tamara-hero-section {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin: 3rem 6rem;
+  }
+
+  .tamara-hero-image {
+    width: 800px;
+    bottom: -7px;
+    left: 619px;
+  }
+}
+
+/* Escritorio estándar (1550px–1799px) */
+@media (min-width: 1550px) and (max-width: 1799px) {
+  .tamara-hero-image {
+    width: 750px;
+    bottom: -9px;
+    right: -131px;
+  }
+}
+
+/* Escritorio muy grande (1800px en adelante) */
+@media (min-width: 1800px) {
+  .tamara-hero-image {
+    width: 750px;
+    bottom: -6px;
+  }
+}
+
+
+
+
+

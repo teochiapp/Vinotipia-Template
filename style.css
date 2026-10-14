@@ -1,0 +1,28 @@
+/*
+Theme Name: Vinotipia
+Theme URI: http://localhost/miweb
+Author: Teo Chiappero
+Description: Un tema creado desde cero
+Version: 1.1.2
+*/
+
+/* 
+Los estilos principales ahora están organizados en:
+/wp-content/themes/vinotipia/assets/css/
+
+Archivos CSS organizados:
+- main.css (archivo principal que importa todos los demás)
+- variables.css (variables CSS y estilos globales)
+- components.css (componentes reutilizables como botones)
+- header.css (estilos del header y navegación)
+- hero.css (sección hero)
+- sections.css (secciones: about, how it works, product parts, etc.)
+- tamara-hero.css (sección hero de Tamara)
+- cta.css (sección call-to-action)
+- contact.css (sección de contacto y formularios)
+- footer.css (estilos del footer)
+- woocommerce.css (estilos específicos de WooCommerce)
+- utilities.css (clases utilitarias)
+
+Para modificar estilos, edita los archivos correspondientes en /assets/css/
+*/

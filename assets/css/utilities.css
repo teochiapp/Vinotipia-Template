@@ -1,0 +1,56 @@
+/* UTILITY CLASSES */
+
+.no-scroll {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  touch-action: none;
+  overscroll-behavior: none;
+}
+
+
+
+/* Forzar colores de marca en el plugin Joinchat */
+.joinchat {
+  --bg: #591e2b !important;
+  --color: #deb867 !important;
+}
+
+.joinchat__button {
+  background-color: #591e2b !important;
+}
+
+.joinchat__button svg path {
+  fill: #fff4dd !important;
+}
+
+.joinchat .joinchat__header {
+  background-color: var(--secondary-color, #deb867) !important;
+  color: var(--primary-color, #591e2b) !important;
+}
+
+.joinchat .joinchat__header span {
+  color: var(--primary-color, #591e2b) !important;
+}
+
+.joinchat .joinchat__wa {
+  fill: var(--primary-color, #591e2b) !important;
+}
+
+.joinchat .joinchat__open {
+  background-color: var(--secondary-color, #deb867) !important;
+  color: var(--primary-color, #591e2b) !important;
+}
+
+.joinchat .joinchat__open__text {
+  color: var(--primary-color, #591e2b) !important;
+}
+
+.joinchat .joinchat__open:hover,
+.joinchat .joinchat__open:active {
+  background-color: var(--secondary-color-light, #e1c088) !important;
+}
+
+.joinchat .joinchat__open__icon path {
+  stroke: var(--primary-color, #591e2b) !important;
+}

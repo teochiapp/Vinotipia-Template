@@ -1,0 +1,104 @@
+/* CATALOGUE SECTION */
+.catalogue-section {
+  background-color: var(--background-color);
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.catalogue-info {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+}
+
+.catalogue-info h2 {
+  font-family: 'Sofia Sans', sans-serif;
+  font-size: 42px;
+  font-weight: 300;
+  color: #2c0b12;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.catalogue-subtitle {
+  font-family: 'Sofia Sans', sans-serif;
+  font-size: 22px;
+  color: #591e2b;
+  margin-bottom: 3rem;
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+.chip-container {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.chip-btn {
+  background-color: #ffffff;
+  border: 1px solid rgba(89, 30, 43, 0.15);
+  color: #591e2b;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-family: 'Sofia Sans', sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.chip-btn i {
+  font-size: 1.1em;
+  opacity: 0.8;
+  transition: transform 0.3s ease;
+}
+
+.chip-btn:hover {
+  background-color: #591e2b;
+  color: #fff4dd;
+  border-color: #591e2b;
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(89, 30, 43, 0.25);
+}
+
+.chip-btn:hover i {
+  transform: scale(1.15);
+  opacity: 1;
+}
+
+.whatsapp-btn {
+  background-color: #591e2b;
+  border-color: #591e2b;
+  color: #fff4dd;
+}
+
+.whatsapp-btn:hover {
+  background-color: #ffffff;
+  border-color: #591e2b;
+  color: #591e2b;
+}
+
+@media (max-width: 768px) {
+  .catalogue-section {
+    padding: 3rem 1.5rem;
+  }
+  .catalogue-info h2 {
+    font-size: 32px;
+  }
+  .chip-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

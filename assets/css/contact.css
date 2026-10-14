@@ -1,0 +1,156 @@
+/* CONTACT SECTION */
+
+.vinotipia-contact {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  padding: 3rem 6rem;
+  color: var(--text-white);
+  overflow: hidden;
+  z-index: 0;
+  /* Asegura que el overlay quede detrás del contenido */
+}
+
+.vinotipia-contact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to left,
+      rgba(89, 30, 43, 0.4) 0%,
+      rgba(89, 30, 43, 0.3) 50%,
+      rgba(89, 30, 43, 0.4) 100%);
+  z-index: -1;
+}
+
+.contact-content {
+  position: relative;
+  max-width: 800px;
+  width: 100%;
+  z-index: 1;
+}
+
+.contact-content h4 {
+  letter-spacing: 5px;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  color: var(--text-white);
+  margin-bottom: 0.5rem;
+  font-weight: 300;
+}
+
+.contact-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+.contact-content p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  color: var(--text-white);
+}
+
+/* WPForms Styles */
+div#wpforms-43:hover {
+  background-color: transparent;
+}
+
+.wpforms-form {
+  background: transparent !important;
+  color: var(--text-white) !important;
+}
+
+.wpforms-field input[type="text"],
+.wpforms-field input[type="email"],
+.wpforms-field textarea {
+  background-color: rgba(100, 20, 50, 0.4) !important;
+  border: 1px solid var(--primary-color-light) !important;
+  border-radius: 8px !important;
+  padding: 0.6rem 1rem !important;
+  color: var(--text-white) !important;
+  width: 100% !important;
+  font-size: 1rem !important;
+}
+
+.wpforms-field input::placeholder,
+.wpforms-field textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.wpforms-field-label {
+  color: var(--text-white) !important;
+  font-weight: 500 !important;
+  font-size: 1.1rem !important;
+  margin-bottom: 0.5rem !important;
+  display: block !important;
+  padding-left: 10px !important;
+}
+
+.wpforms-submit-container {
+  display: flex !important;
+  justify-content: flex-end !important;
+}
+
+.wpforms-submit {
+  background-color: var(--secondary-color) !important;
+  color: var(--primary-color) !important;
+  padding: 0px 30px !important;
+  border-radius: 100px !important;
+  border: none !important;
+  font-weight: 500 !important;
+  font-size: 19px !important;
+}
+
+.wpforms-submit:hover {
+  background: var(--primary-color) !important;
+  color: var(--secondary-color) !important;
+}
+
+.wpforms-field.wpforms-has-error input,
+.wpforms-field.wpforms-has-error textarea {
+  border: none !important;
+  outline: 2px solid #fc575e !important;
+}
+
+/* Layout de 2 columnas */
+.wpforms-field-container .wpforms-field {
+  width: 100% !important;
+}
+
+@media (min-width: 768px) {
+  .wpforms-field-container {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 1rem !important;
+  }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .contact-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact-form .form-row {
+    flex-direction: column;
+  }
+
+  .contact-form button {
+    align-self: stretch;
+    text-align: center;
+  }
+
+  .vinotipia-contact {
+    padding: 3rem 2rem;
+  }
+}
+
+@media (max-width: 1279px) {
+  .vinotipia-contact {
+    display: flex;
+    justify-content: center;
+  }
+}

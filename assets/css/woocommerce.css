@@ -1,0 +1,107 @@
+/* WOOCOMMERCE STYLES */
+
+th.product-name a {
+    color: var(--primary-color) !important;
+}
+
+@media (max-width: 768px) {
+.woocommerce #reviews #comments ol.commentlist {
+    padding: 0;
+}
+}
+
+.precio-aclaracion {
+  display: block;
+  font-size: 0.95rem !important;
+  color: #777 !important;
+  font-weight: 500 !important;
+  font-style: italic !important;
+  margin-top: 4px !important;
+  letter-spacing: 0.5px !important;
+  text-transform: none !important;
+}
+
+/* === NOTIFICACIONES GLOBALES WOOCOMMERCE === */
+.woocommerce-message, 
+.woocommerce-error, 
+.woocommerce-info {
+  background-color: #ffffff !important;
+  border: 1px solid rgba(0,0,0,0.05) !important;
+  border-left: 4px solid var(--primary-color) !important;
+  padding: 16px 24px !important;
+  margin-bottom: 30px !important;
+  color: var(--text-black) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: wrap !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05) !important;
+  font-weight: 500;
+}
+
+.woocommerce-error {
+  border-left-color: #d32f2f !important;
+}
+
+.woocommerce-info {
+  border-left-color: var(--secondary-color) !important;
+}
+
+/* El botón dentro del mensaje (ej: "Ver carrito") */
+.woocommerce-message .button,
+.woocommerce-error .button,
+.woocommerce-info .button {
+  background-color: var(--primary-color) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 25px !important;
+  padding: 10px 24px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  font-size: 0.8rem !important;
+  transition: all 0.3s ease !important;
+  margin-left: auto; /* Empuja el botón a la derecha */
+}
+
+.woocommerce-message .button:hover {
+  background-color: var(--secondary-color) !important;
+  transform: translateY(-2px);
+}
+
+/* Resetear el icono por defecto de WooCommerce para que no moleste el layout flex */
+.woocommerce-message::before, 
+.woocommerce-error::before, 
+.woocommerce-info::before {
+  position: static !important;
+  margin-right: 12px !important;
+  color: var(--primary-color) !important;
+  top: auto !important;
+  left: auto !important;
+}
+
+@media (max-width: 600px) {
+  .woocommerce-message, 
+  .woocommerce-error, 
+  .woocommerce-info {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    text-align: center !important;
+    gap: 15px !important;
+    padding: 20px 15px !important;
+  }
+  .woocommerce-message::before {
+    margin-right: 0 !important;
+    margin-bottom: 5px !important;
+  }
+  .woocommerce-message .button {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+}
+
+
+
+
+

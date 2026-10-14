@@ -1,0 +1,190 @@
+/* CHECKOUT PAGE STYLES */
+
+/* === Contenedor general === */
+.checkout-container {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+  font-family: 'Sofia Sans', sans-serif;
+}
+
+.checkout-title {
+  text-align: left;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 30px;
+}
+
+/* === Contenedor WooCommerce === */
+.woocommerce-checkout {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  background: white;
+}
+
+form.checkout.woocommerce-checkout {
+  background: white;
+  padding: 20px;
+}
+
+div#customer_details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* === Formularios === */
+.woocommerce form.checkout input,
+.woocommerce form.checkout textarea,
+.woocommerce form.checkout select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
+.woocommerce form.checkout label {
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 5px;
+  display: block;
+  font-size: 1.2rem;
+}
+
+/* === Títulos de sección === */
+#customer_details > div.col-1 > div > h3 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+/* === Botón de realizar pedido === */
+.woocommerce-checkout button.button {
+  background-color: var(--primary-color);
+  color: var(--text-white);
+  padding: 14px 30px;
+  border: none;
+  border-radius: 100px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.woocommerce-checkout button.button:hover {
+  background-color: var(--primary-color-light);
+}
+
+#place_order {
+  background-color: var(--secondary-color);
+}
+
+/* === Notificaciones WooCommerce === */
+.woocommerce-error,
+.woocommerce-message,
+.woocommerce-info {
+  background-color: var(--text-white);
+  border: 1px solid var(--secondary-color);
+  color: var(--primary-color);
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* === Métodos de pago === */
+.woocommerce-checkout #payment ul.payment_methods li input {
+  width: auto;
+}
+
+#payment > ul > li.wc_payment_method.payment_method_woo-mercado-pago-credits > label {
+  display: inline-block !important;
+}
+
+#payment > ul > li.wc_payment_method.payment_method_woo-mercado-pago-basic > label {
+  display: inline-block !important;
+}
+
+#payment > ul > li.wc_payment_method.payment_method_nave_gateway > label {
+  display: inline-block !important;
+}
+
+#payment > div > div > div > p {
+  display: none !important;
+}
+
+/* === Selector de provincias === */
+div#ca_container_select_provinces {
+  margin: 20px 0;
+  min-height: 2vh;
+  font-size: 1rem;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  padding: 0;
+}
+
+/* === Precios en checkout === */
+.woocommerce-checkout #order_review .woocommerce-Price-amount.amount,
+.woocommerce-checkout #order_review .woocommerce-Price-amount .amount,
+.woocommerce-checkout #order_review span.woocommerce-Price-amount.amount,
+#order_review .woocommerce-Price-amount,
+.woocommerce-checkout-review-order-table .woocommerce-Price-amount,
+.woocommerce-checkout .cart-subtotal .woocommerce-Price-amount,
+.woocommerce-checkout .order-total .woocommerce-Price-amount,
+.woocommerce-checkout .product-total .woocommerce-Price-amount {
+    color: var(--primary-color) !important;
+    font-weight: 700 !important;
+    font-size: 1.1rem !important;
+}
+
+/* Total del pedido más grande */
+.woocommerce-checkout .order-total .woocommerce-Price-amount.amount,
+#order_review .order-total .woocommerce-Price-amount {
+    font-size: 1.4rem !important;
+    font-weight: 800 !important;
+    color: var(--primary-color) !important;
+}
+
+/* Títulos de totales en checkout */
+#order_review table th,
+.woocommerce-checkout-review-order-table th {
+    color: var(--text-black) !important;
+    font-weight: 600 !important;
+}
+
+/* Descuentos en checkout */
+.woocommerce-checkout tr.order-discount td,
+.woocommerce-checkout tr[class*="discount"] td,
+#order_review tr.order-discount td,
+#order_review tr[class*="discount"] td {
+    color: var(--primary-color) !important;
+    font-weight: 700 !important;
+    font-size: 1.1rem !important;
+}
+
+/* Texto de descuento en checkout */
+.woocommerce-checkout tr.order-discount th,
+.woocommerce-checkout tr[class*="discount"] th,
+#order_review tr.order-discount th,
+#order_review tr[class*="discount"] th {
+    color: var(--text-black) !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+}
+
+/* === RESPONSIVE === */
+@media (min-width: 768px) {
+  .woocommerce-error, .woocommerce-message, .woocommerce-info {
+    padding-left: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .woocommerce-error::before, .woocommerce-info::before, .woocommerce-message::before {
+    display: none !important;
+  }
+}
+
+
