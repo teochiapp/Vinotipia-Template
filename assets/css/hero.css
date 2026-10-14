@@ -107,6 +107,31 @@
   }
 }
 
+/* Pantallas intermedias: hero de 2 columnas — 2 botones por fila */
+@media (min-width: 993px) and (max-width: 1400px) {
+  .contentProductHero h2 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+  }
+
+  .contentbuttons {
+    padding-bottom: 20px;
+  }
+
+  .center-buttons {
+    gap: 10px;
+  }
+
+  .center-buttons .buttonwhite,
+  .center-buttons .button-transparent {
+    flex: 0 0 calc(50% - 5px);
+    padding: 9px 20px;
+    font-size: 15px;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+  }
+}
+
 .right-side {
   display: flex;
   align-items: center;

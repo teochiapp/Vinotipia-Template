@@ -13,18 +13,6 @@
             <img src="<?php the_sub_field('imagen_kit'); ?>" alt="Botellas de vino">
             <p>
               <?php the_sub_field('titulo_repetidor_kit'); ?>
-              <?php 
-                $titulo_kit = get_sub_field('titulo_repetidor_kit');
-                if ($titulo_kit) {
-                  $titulo_lower = strtolower(trim(wp_strip_all_tags((string)$titulo_kit)));
-                  // Use strpos for partial matching in case there are spaces or other words
-                  if (strpos($titulo_lower, 'faro') !== false || strpos($titulo_lower, 'viaje') !== false) {
-                    echo '<span class="vino-tipo-label">Blanco</span>';
-                  } else {
-                    echo '<span class="vino-tipo-label">Tinto</span>';
-                  }
-                }
-              ?>
             </p>
           </div>
         <?php endwhile; ?>

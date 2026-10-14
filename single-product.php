@@ -46,11 +46,6 @@ if ( has_term('combos', 'product_cat', $post->ID) ) {
           }
           ?>
 
-          <?php 
-          $sticker = get_field('imagen_triada', $product->get_id());
-          if ($sticker): ?>
-              <img src="<?php echo esc_url($sticker); ?>" class="imagen-triada" alt="">
-          <?php endif; ?>
 
           <div class="imagen-detalle main-image-wrapper">
             <?php 

@@ -1,7 +1,7 @@
-<?php
+﻿<?php
 
 /* ============================================================
-   VINOTIPO QUIZ — SISTEMA DE TRACKING ANÓNIMO
+   VINOTIPO QUIZ â€” SISTEMA DE TRACKING ANÃ“NIMO
    Guarda el arquetipo elegido + timestamp + IP hasheada.
    Sin cookies, sin cuentas, sin molestias para el usuario.
 ============================================================ */
@@ -32,7 +32,7 @@ function vinotipia_crear_tabla_tracking() {
 add_action( 'init', 'vinotipia_crear_tabla_tracking' );
 
 /**
- * 2. AJAX handler — disponible para usuarios NO logueados.
+ * 2. AJAX handler â€” disponible para usuarios NO logueados.
  *    Endpoint: admin-ajax.php?action=vinotipo_guardar_resultado
  */
 add_action( 'wp_ajax_nopriv_vinotipo_guardar_resultado', 'vinotipo_guardar_resultado_cb' );
@@ -40,7 +40,7 @@ add_action( 'wp_ajax_vinotipo_guardar_resultado',        'vinotipo_guardar_resul
 function vinotipo_guardar_resultado_cb() {
     // Verificar nonce
     if ( ! check_ajax_referer( 'vinotipo_track', 'nonce', false ) ) {
-        wp_send_json_error( 'nonce inválido', 403 );
+        wp_send_json_error( 'nonce invÃ¡lido', 403 );
     }
 
     $permitidos = [
@@ -50,12 +50,12 @@ function vinotipo_guardar_resultado_cb() {
     $arquetipo = isset( $_POST['arquetipo'] ) ? sanitize_key( $_POST['arquetipo'] ) : '';
 
     if ( ! in_array( $arquetipo, $permitidos, true ) ) {
-        wp_send_json_error( 'arquetipo inválido', 400 );
+        wp_send_json_error( 'arquetipo invÃ¡lido', 400 );
     }
 
     global $wpdb;
     $tabla = $wpdb->prefix . 'vinotipo_resultados';
-    // Hash SHA-256 de la IP — anónimo pero permite deduplicar por sesión si quisieras
+    // Hash SHA-256 de la IP â€” anÃ³nimo pero permite deduplicar por sesiÃ³n si quisieras
     $ip_hash = hash( 'sha256', $_SERVER['REMOTE_ADDR'] ?? '' );
 
     $wpdb->insert( $tabla, [
@@ -72,7 +72,7 @@ function vinotipo_guardar_resultado_cb() {
  */
 add_action( 'wp_enqueue_scripts', 'vinotipia_localizar_test_tracking' );
 function vinotipia_localizar_test_tracking() {
-    // Solo en la página del test (template name)
+    // Solo en la pÃ¡gina del test (template name)
     if ( ! is_page_template( 'page-test.php' ) ) return;
 
     // Preconnect a Google Fonts (mejora velocidad de carga)
@@ -89,18 +89,18 @@ function vinotipia_localizar_test_tracking() {
         null
     );
 
-    // Script inline mínimo para tracking (no necesita archivo externo)
-    // Nota: vinotipiaTrack (ajaxurl + nonce) se inyecta directo en page-test.php vía PHP.
+    // Script inline mÃ­nimo para tracking (no necesita archivo externo)
+    // Nota: vinotipiaTrack (ajaxurl + nonce) se inyecta directo en page-test.php vÃ­a PHP.
 }
 
 /**
- * 4. Página de estadísticas en el admin de WordPress.
- *    Acceso: Menú "Vinotipo → Estadísticas del Test".
+ * 4. PÃ¡gina de estadÃ­sticas en el admin de WordPress.
+ *    Acceso: MenÃº "Vinotipo â†’ EstadÃ­sticas del Test".
  */
 add_action( 'admin_menu', 'vinotipia_admin_stats_menu' );
 function vinotipia_admin_stats_menu() {
     add_menu_page(
-        'Estadísticas — Vinotipo Test',
+        'EstadÃ­sticas â€” Vinotipo Test',
         'Vinotipo Test',
         'manage_options',
         'vinotipo-stats',
@@ -125,7 +125,7 @@ function vinotipia_admin_stats_page() {
     // Total general
     $grand_total = array_sum( array_column( $totales ?? [], 'total' ) );
 
-    // Últimas 50 respuestas
+    // Ãšltimas 50 respuestas
     $recientes = $wpdb->get_results(
         "SELECT arquetipo, fecha FROM $tabla ORDER BY fecha DESC LIMIT 50",
         ARRAY_A
@@ -145,13 +145,13 @@ function vinotipia_admin_stats_page() {
     ];
     ?>
     <div class="wrap">
-      <h1 style="font-family:Georgia,serif;color:#7C252E;">🍷 Estadísticas — Test del Vinotipo</h1>
+      <h1 style="font-family:Georgia,serif;color:#7C252E;">ðŸ· EstadÃ­sticas â€” Test del Vinotipo</h1>
 
       <?php if ( empty( $totales ) ) : ?>
-        <p>Todavía no hay resultados registrados. Una vez que alguien complete el test, aparecerán aquí.</p>
+        <p>TodavÃ­a no hay resultados registrados. Una vez que alguien complete el test, aparecerÃ¡n aquÃ­.</p>
       <?php else : ?>
 
-        <h2>Distribución de arquetipos <small style="font-weight:400;color:#666;">(<?php echo $grand_total; ?> tests completados)</small></h2>
+        <h2>DistribuciÃ³n de arquetipos <small style="font-weight:400;color:#666;">(<?php echo $grand_total; ?> tests completados)</small></h2>
 
         <style>
           .vt-bar-wrap { margin: 24px 0 40px; }
@@ -177,7 +177,7 @@ function vinotipia_admin_stats_page() {
           <?php endforeach; ?>
         </div>
 
-        <h2>Últimos 50 resultados</h2>
+        <h2>Ãšltimos 50 resultados</h2>
         <table class="widefat striped" style="max-width:480px;">
           <thead><tr><th>Arquetipo</th><th>Fecha y hora</th></tr></thead>
           <tbody>
@@ -202,23 +202,23 @@ function vinotipia_enqueue_styles() {
         'vinotipia-main', // Handle del estilo
         get_template_directory_uri() . '/assets/css/main.css', // Ruta al archivo main.css
         array(), // Dependencias
-        filemtime( get_template_directory() . '/assets/css/main.css' ) // Cache busting automático al modificar el archivo
+        filemtime( get_template_directory() . '/assets/css/main.css' ) // Cache busting automÃ¡tico al modificar el archivo
     );
 
-    // Encola woocommerce.css directamente para evitar caché en el @import
+    // Encola woocommerce.css directamente para evitar cachÃ© en el @import
     wp_enqueue_style(
         'vinotipia-woocommerce',
         get_template_directory_uri() . '/assets/css/woocommerce.css',
         array('vinotipia-main'),
-        filemtime( get_template_directory() . '/assets/css/woocommerce.css' ) // Cache busting automático al modificar el archivo
+        filemtime( get_template_directory() . '/assets/css/woocommerce.css' ) // Cache busting automÃ¡tico al modificar el archivo
     );
 
-    // Encola utilities.css directamente para evitar caché en el @import
+    // Encola utilities.css directamente para evitar cachÃ© en el @import
     wp_enqueue_style(
         'vinotipia-utilities',
         get_template_directory_uri() . '/assets/css/utilities.css',
         array('vinotipia-main'),
-        filemtime( get_template_directory() . '/assets/css/utilities.css' ) // Cache busting automático al modificar el archivo
+        filemtime( get_template_directory() . '/assets/css/utilities.css' ) // Cache busting automÃ¡tico al modificar el archivo
     );
 }
 add_action( 'wp_enqueue_scripts', 'vinotipia_enqueue_styles', 99 );
@@ -229,23 +229,23 @@ function cargar_font_awesome() {
 }
 add_action('wp_enqueue_scripts', 'cargar_font_awesome');
 
-// Cargar JavaScript específico para single product
+// Cargar JavaScript especÃ­fico para single product
 function vinotipia_enqueue_scripts() {
     if (is_product()) {
         wp_enqueue_script(
             'vinotipia-single-product',
             get_template_directory_uri() . '/assets/js/single-product.js',
             array('jquery'),
-            filemtime( get_template_directory() . '/assets/js/single-product.js' ), // Cache busting automático al modificar el archivo
+            filemtime( get_template_directory() . '/assets/js/single-product.js' ), // Cache busting automÃ¡tico al modificar el archivo
             true
         );
         
-        // Enqueue de los estilos aquí para evitar problemas de caché con los @import
+        // Enqueue de los estilos aquÃ­ para evitar problemas de cachÃ© con los @import
         wp_enqueue_style(
             'vinotipia-single-product-css',
             get_template_directory_uri() . '/assets/css/single-product.css',
             array(),
-            filemtime( get_template_directory() . '/assets/css/single-product.css' ) // Cache busting automático al modificar el archivo
+            filemtime( get_template_directory() . '/assets/css/single-product.css' ) // Cache busting automÃ¡tico al modificar el archivo
         );
     }
 }
@@ -264,7 +264,7 @@ add_action('wp_enqueue_scripts', 'add_aos_animation_scripts');
 function mi_tema_registrar_menus() {
     register_nav_menus(
         array(
-            'menu-principal' => __( 'Menú Principal' ),
+            'menu-principal' => __( 'MenÃº Principal' ),
         )
     );
 }
@@ -283,7 +283,7 @@ add_action('init', function () {
 
 function diferir_scripts_wpforms($tag, $handle) {
     if (strpos($handle, 'wpforms') !== false) {
-        // Agrega defer (o async si lo preferís)
+        // Agrega defer (o async si lo preferÃ­s)
         return str_replace(' src', ' defer src', $tag);
     }
     return $tag;
@@ -316,7 +316,7 @@ function descuento_por_metodo_nave() {
     }
 }
 
-// Añadir campo DNI al checkout
+// AÃ±adir campo DNI al checkout
 add_action( 'woocommerce_after_checkout_billing_form', 'agregar_campo_dni_checkout' );
 function agregar_campo_dni_checkout( $checkout ) {
     woocommerce_form_field( 'billing_dni', array(
@@ -336,7 +336,7 @@ function guardar_campo_dni_en_pedido( $order_id ) {
     }
 }
 
-// Mostrar el DNI en el panel de administración
+// Mostrar el DNI en el panel de administraciÃ³n
 add_action( 'woocommerce_admin_order_data_after_billing_address', 'mostrar_dni_en_admin', 10, 1 );
 function mostrar_dni_en_admin( $order ){
     $dni = get_post_meta( $order->get_id(), 'billing_dni', true );
@@ -360,20 +360,20 @@ function agregar_dni_a_emails( $fields, $sent_to_admin, $order ) {
 
 /**
  * MEJORA DE EXPERIENCIA DE COMPRA
- * Redirección automática al carrito después de agregar un producto
+ * RedirecciÃ³n automÃ¡tica al carrito despuÃ©s de agregar un producto
  */
 
-// Opción 1: Redirección nativa para formularios sin AJAX
+// OpciÃ³n 1: RedirecciÃ³n nativa para formularios sin AJAX
 add_filter( 'woocommerce_add_to_cart_redirect', 'vinotipia_redirect_to_cart_after_add' );
 function vinotipia_redirect_to_cart_after_add( $url ) {
-    // Redirige al carrito después de agregar un producto
+    // Redirige al carrito despuÃ©s de agregar un producto
     return wc_get_cart_url();
 }
 
-// Opción 2: Habilitar AJAX Add to Cart en páginas de archivo/catálogo
+// OpciÃ³n 2: Habilitar AJAX Add to Cart en pÃ¡ginas de archivo/catÃ¡logo
 add_action( 'wp_enqueue_scripts', 'vinotipia_enqueue_cart_redirect_script' );
 function vinotipia_enqueue_cart_redirect_script() {
-    // Solo cargar en la página de archivo de productos (catálogo)
+    // Solo cargar en la pÃ¡gina de archivo de productos (catÃ¡logo)
     if ( is_post_type_archive( 'product' ) || is_tax( 'product_cat' ) ) {
         wp_enqueue_script(
             'vinotipia-cart-redirect',
@@ -395,7 +395,7 @@ function vinotipia_enqueue_cart_redirect_script() {
  * SEGUIMIENTO PIXEL DE META (AddToCart y Purchase)
  */
 
-// Evento AddToCart (Seguimiento de agregación al carrito en el cliente)
+// Evento AddToCart (Seguimiento de agregaciÃ³n al carrito en el cliente)
 add_action( 'wp_footer', 'vinotipia_meta_pixel_add_to_cart_js', 99 );
 function vinotipia_meta_pixel_add_to_cart_js() {
     if ( ! is_product() && ! is_shop() && ! is_post_type_archive( 'product' ) && ! is_tax( 'product_cat' ) && ! is_cart() ) {
@@ -404,7 +404,7 @@ function vinotipia_meta_pixel_add_to_cart_js() {
     ?>
     <script type="text/javascript">
     jQuery(document).ready(function($) {
-        // 1. AJAX Add to Cart (Páginas de catálogo)
+        // 1. AJAX Add to Cart (PÃ¡ginas de catÃ¡logo)
         $(document.body).on('added_to_cart', function(event, fragments, cart_hash, $button) {
             if ($button && $button.data('product_id')) {
                 fbq('track', 'AddToCart', {
@@ -419,7 +419,7 @@ function vinotipia_meta_pixel_add_to_cart_js() {
             var $form = $(this).closest('form.cart');
             var product_id = $form.find('[name="add-to-cart"]').val() || $(this).val();
             
-            // Soporte para productos variables (toma el ID de variación elegido)
+            // Soporte para productos variables (toma el ID de variaciÃ³n elegido)
             var variation_id = $form.find('[name="variation_id"]').val();
             var final_id = variation_id && variation_id != 0 ? variation_id : product_id;
 
@@ -435,7 +435,7 @@ function vinotipia_meta_pixel_add_to_cart_js() {
     <?php
 }
 
-// Evento Purchase (Página de confirmación de pedido / Thank You)
+// Evento Purchase (PÃ¡gina de confirmaciÃ³n de pedido / Thank You)
 add_action( 'woocommerce_thankyou', 'vinotipia_meta_pixel_purchase' );
 function vinotipia_meta_pixel_purchase( $order_id ) {
     if ( ! $order_id ) {
@@ -446,7 +446,7 @@ function vinotipia_meta_pixel_purchase( $order_id ) {
         return;
     }
     
-    // Evitar duplicados por recarga de página
+    // Evitar duplicados por recarga de pÃ¡gina
     if ( $order->get_meta( '_meta_pixel_purchase_tracked' ) ) {
         return;
     }
@@ -514,7 +514,7 @@ function vinotipia_meta_pixel_view_content() {
 // Evento InitiateCheckout (Iniciar pago)
 add_action( 'wp_footer', 'vinotipia_meta_pixel_initiate_checkout', 99 );
 function vinotipia_meta_pixel_initiate_checkout() {
-    // Solo en la página de checkout (y no en order-received)
+    // Solo en la pÃ¡gina de checkout (y no en order-received)
     if ( ! is_checkout() || is_wc_endpoint_url( 'order-received' ) ) {
         return;
     }
@@ -590,13 +590,13 @@ function vinotipia_meta_pixel_complete_registration_js() {
 }
 /**
  * ==========================================
- * TRADUCCIÓN DE BOTONES DE CARRITO
+ * TRADUCCIÃ“N DE BOTONES DE CARRITO
  * ==========================================
  */
 add_filter( 'woocommerce_product_single_add_to_cart_text', 'vinotipia_custom_cart_button_text' );
 add_filter( 'woocommerce_product_add_to_cart_text', 'vinotipia_custom_cart_button_text' );
 function vinotipia_custom_cart_button_text() {
-    return 'Añadir al carrito';
+    return 'AÃ±adir al carrito';
 }
 
 /**
@@ -620,7 +620,7 @@ function vinotipia_enqueue_shop_filter() {
 
 /**
  * ==========================================
- * GIFT CARD CUSTOMIZADA (MONTO DINÁMICO)
+ * GIFT CARD CUSTOMIZADA (MONTO DINÃMICO)
  * ==========================================
  */
 
@@ -661,7 +661,7 @@ function vinotipia_add_gift_card_data( $cart_item_data, $product_id, $variation_
             $cart_item_data['gift_recipient_email'] = sanitize_email( $_POST['gift_recipient_email'] );
         }
         
-        // Unique key para permitir agregar múltiples gift cards
+        // Unique key para permitir agregar mÃºltiples gift cards
         $cart_item_data['unique_key'] = md5( microtime().rand() ); 
     }
     return $cart_item_data;
@@ -736,7 +736,7 @@ function vinotipia_send_gift_card_email( $order_id ) {
         // Si no hay email de destinatario, no enviamos
         if ( empty( $gift_email ) || ! is_email( $gift_email ) ) continue;
 
-        // Generar Cupón Único Automáticamente
+        // Generar CupÃ³n Ãšnico AutomÃ¡ticamente
         $coupon_code = 'VINO-' . strtoupper( wp_generate_password( 6, false ) );
         $coupon = new WC_Coupon();
         $coupon->set_code( $coupon_code );
@@ -746,11 +746,11 @@ function vinotipia_send_gift_card_email( $order_id ) {
         $coupon->set_usage_limit( 1 ); // Solo se puede usar 1 vez
         $coupon->save();
 
-        // Agregar el cupón a la meta del pedido por las dudas
-        $item->add_meta_data( 'Código Generado', $coupon_code, true );
+        // Agregar el cupÃ³n a la meta del pedido por las dudas
+        $item->add_meta_data( 'CÃ³digo Generado', $coupon_code, true );
         $item->save();
 
-        $subject = '¡Recibiste una Gift Card de Vinotipia!';
+        $subject = 'Â¡Recibiste una Gift Card de Vinotipia!';
 
         ob_start();
         include get_template_directory() . '/template-parts/emails/gift-card-email.php';
@@ -765,10 +765,10 @@ function vinotipia_send_gift_card_email( $order_id ) {
 }
 
 /* ===================================================
-   LÓGICA DEL CARRITO PARA COMBOS
+   LÃ“GICA DEL CARRITO PARA COMBOS
 =================================================== */
 
-// 1. Guardar selección del kit en el carrito
+// 1. Guardar selecciÃ³n del kit en el carrito
 add_filter( 'woocommerce_add_cart_item_data', 'vinotipia_save_combo_kit_to_cart', 10, 2 );
 function vinotipia_save_combo_kit_to_cart( $cart_item_data, $product_id ) {
     if ( isset( $_POST['selected_combo_kit'] ) && ! empty( $_POST['selected_combo_kit'] ) ) {
@@ -776,10 +776,13 @@ function vinotipia_save_combo_kit_to_cart( $cart_item_data, $product_id ) {
         // Forzar que WooCommerce trate cada combo como un item separado en el carrito si eligen kits distintos
         $cart_item_data['unique_key'] = md5( microtime() . rand() );
     }
+    if ( isset( $_POST['selected_combo_tipos'] ) && ! empty( $_POST['selected_combo_tipos'] ) ) {
+        $cart_item_data['selected_combo_tipos'] = sanitize_text_field( $_POST['selected_combo_tipos'] );
+    }
     return $cart_item_data;
 }
 
-// 2. Mostrar selección en el carrito y checkout
+// 2. Mostrar selecciÃ³n en el carrito y checkout
 add_filter( 'woocommerce_get_item_data', 'vinotipia_display_combo_kit_in_cart', 10, 2 );
 function vinotipia_display_combo_kit_in_cart( $item_data, $cart_item ) {
     if ( isset( $cart_item['selected_combo_kit'] ) ) {
@@ -788,13 +791,22 @@ function vinotipia_display_combo_kit_in_cart( $item_data, $cart_item ) {
             'value' => $cart_item['selected_combo_kit'],
         );
     }
+    if ( isset( $cart_item['selected_combo_tipos'] ) ) {
+        $item_data[] = array(
+            'name'  => 'Vinotipia Tipos',
+            'value' => $cart_item['selected_combo_tipos'],
+        );
+    }
     return $item_data;
 }
 
-// 3. Guardar selección en los detalles del pedido (Order Meta) para que lo vea el administrador
+// 3. Guardar selecciÃ³n en los detalles del pedido (Order Meta) para que lo vea el administrador
 add_action( 'woocommerce_checkout_create_order_line_item', 'vinotipia_save_combo_kit_to_order', 10, 4 );
 function vinotipia_save_combo_kit_to_order( $item, $cart_item_key, $values, $order ) {
     if ( isset( $values['selected_combo_kit'] ) ) {
         $item->add_meta_data( 'Kit Incluido', $values['selected_combo_kit'], true );
+    }
+    if ( isset( $values['selected_combo_tipos'] ) ) {
+        $item->add_meta_data( 'Vinotipia Tipos', $values['selected_combo_tipos'], true );
     }
 }

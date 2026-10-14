@@ -181,12 +181,13 @@ function initCustomVariationGrid() {
       
       const isBlanco = (opt.value === 'el-faro' || opt.value === 'el-viaje');
       const typeText = isBlanco ? 'Blanco' : 'Tinto';
+      const esTipos = opt.value in iconMap;
       
       // Diseño premium usando los iconos de FontAwesome
       btn.innerHTML = `
         <div class="btn-icon">${iconHtml}</div>
         <span class="btn-text">${opt.text}</span>
-        <span class="btn-type" style="font-size: 0.75em; font-weight: 400; opacity: 0.9; margin-top: 4px; text-transform: uppercase; letter-spacing: 1px; color: white;">${typeText}</span>
+        ${esTipos ? `<span class="btn-type" style="font-size: 0.75em; font-weight: 400; opacity: 0.9; margin-top: 4px; text-transform: uppercase; letter-spacing: 1px; color: white;">${typeText}</span>` : ''}
       `;
       btn.dataset.value = opt.value;
       
