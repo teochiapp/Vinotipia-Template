@@ -6,23 +6,12 @@ Description: Un tema creado desde cero
 Version: 1.0
 */
 
-/* Import all CSS modules */
-@import url('variables.css?v=2.0');
-@import url('components.css?v=2.0');
-@import url('header.css?v=2.6');
-@import url('hero.css?v=2.0');
-@import url('sections.css?v=2.1');
-@import url('tamara-hero.css?v=2.0');
-@import url('cta.css?v=2.0');
-@import url('catalogue.css?v=2.0');
-@import url('contact.css?v=2.0');
-@import url('footer.css?v=2.0');
-/* @import url('woocommerce.css'); Cargado en functions.php para cache busting */
-/* @import url('utilities.css'); Cargado en functions.php para cache busting */
-
-/* WooCommerce specific pages */
-@import url('archive-product.css?v=2.0');
-/* @import url('single-product.css'); Cargado en functions.php para cache busting */
-@import url('cart.css?v=2.0');
-@import url('checkout.css?v=2.0');
-@import url('my-account.css?v=2.0');
+/*
+ * Los módulos CSS (variables, components, header, sections, tamara-hero, cta,
+ * catalogue, contact, footer, archive-product, cart, checkout, my-account)
+ * ya NO se cargan con @import. Se encolan en functions.php
+ * (vinotipia_enqueue_styles) con filemtime() para cache busting automático.
+ * Para agregar un módulo nuevo, sumalo al array $css_modules en functions.php.
+ *
+ * hero, woocommerce, utilities y single-product también se encolan en functions.php.
+ */

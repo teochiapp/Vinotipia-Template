@@ -48,7 +48,7 @@ get_header(); ?>
             <details class="faq-item">
                 <summary>¿Por qué cuesta lo que cuesta?</summary>
                 <div class="faq-content">
-                    <p>Porque no estás comprando tres botellas. Estás comprando lo que pasa alrededor de ellas. Una experiencia diseñada para jugar, conversar, sorprenderse y descubrir qué vino te representa. Todo llega listo para que vos solo tengas que abrir la caja y disfrutar.</p>
+                    <p>Porque no son solo botellas de vino. Estás comprando lo que pasa alrededor de ellas. Una experiencia diseñada para jugar, conversar, sorprenderse y descubrir qué vino te representa. Todo llega listo para que vos solo tengas que abrir la caja y disfrutar.</p>
                 </div>
             </details>
         </section>

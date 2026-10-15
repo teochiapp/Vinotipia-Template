@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 /* ============================================================
    VINOTIPO QUIZ â€” SISTEMA DE TRACKING ANÃ“NIMO
@@ -197,12 +197,44 @@ function vinotipia_admin_stats_page() {
 /* ============================================================ */
 
 function vinotipia_enqueue_styles() {
+    // Módulos CSS que antes se cargaban con @import en main.css.
+    // Se encolan directo con filemtime() para que el navegador/CDN
+    // siempre descargue la versión nueva tras cada subida.
+    $css_modules = array(
+        'variables', 'components', 'header', 'sections', 'tamara-hero',
+        'cta', 'catalogue', 'contact', 'footer',
+        'archive-product', 'cart', 'checkout', 'my-account',
+    );
+    $module_handles = array();
+    foreach ( $css_modules as $module ) {
+        $path = get_template_directory() . '/assets/css/' . $module . '.css';
+        if ( ! file_exists( $path ) ) {
+            continue;
+        }
+        $handle = 'vinotipia-' . $module;
+        wp_enqueue_style(
+            $handle,
+            get_template_directory_uri() . '/assets/css/' . $module . '.css',
+            $module_handles ? array( end( $module_handles ) ) : array(),
+            filemtime( $path )
+        );
+        $module_handles[] = $handle;
+    }
+
     // Encola el main.css organizado
     wp_enqueue_style(
         'vinotipia-main', // Handle del estilo
         get_template_directory_uri() . '/assets/css/main.css', // Ruta al archivo main.css
-        array(), // Dependencias
-        filemtime( get_template_directory() . '/assets/css/main.css' ) // Cache busting automÃ¡tico al modificar el archivo
+        $module_handles, // Dependencias: módulos (mantiene el orden de cascada)
+        filemtime( get_template_directory() . '/assets/css/main.css' ) // Cache busting automático al modificar el archivo
+    );
+
+    // Encola hero.css directamente para evitar caché en el @import
+    wp_enqueue_style(
+        'vinotipia-hero',
+        get_template_directory_uri() . '/assets/css/hero.css',
+        array('vinotipia-main'),
+        filemtime( get_template_directory() . '/assets/css/hero.css' )
     );
 
     // Encola woocommerce.css directamente para evitar cachÃ© en el @import
